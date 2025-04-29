@@ -1,0 +1,16 @@
+{
+  "name": "mmm-dailyagenda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MMM-DailyAgenda.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1",
+    "node-ical": "^0.20.1"
+  }
+}

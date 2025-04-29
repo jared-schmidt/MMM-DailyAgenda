@@ -1,0 +1,85 @@
+/* MMM-DailyAgenda.css */
+
+.MMM-DailyAgenda .daily-agenda-wrapper {
+  display: flex;          /* Arrange children (day containers) horizontally */
+  flex-wrap: wrap;        /* Allow days to wrap to the next line if space runs out */
+  gap: 20px;              /* Add space between the day containers */
+  /* max-width: 100%; */     /* Ensure it doesn't overflow module region excessively */
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.MMM-DailyAgenda .day-container {
+      /* --- MODIFICATION START --- */
+      flex: 0 1 250px; /* Flex properties: Don't grow, shrink if needed, base width of 250px */
+      /* Alternatively, you could use a fixed width: */
+      /* width: 250px; */
+      /* Adjust the width (250px) based on your screen and preference */
+      /* --- MODIFICATION END --- */
+
+      /* margin-bottom: 15px; */ /* Remove bottom margin if using 'gap' on wrapper */
+      /* Add some border or background if you want to visually separate days */
+      /* border: 1px solid #333; */
+      /* padding: 10px; */
+      /* border-radius: 5px; */
+}
+
+.MMM-DailyAgenda .day-header {
+    font-size: 1.1em;   /* Slightly larger */
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #666; /* Optional separator */
+}
+
+.MMM-DailyAgenda .event-count {
+    margin-bottom: 8px;
+}
+
+.MMM-DailyAgenda .event-item {
+    display: flex; /* Use flexbox for layout */
+    align-items: stretch; /* Make color bar and details same height */
+    background-color: #222; /* Dark background for item */
+    border-radius: 5px;
+    margin-bottom: 8px; /* Space between events */
+    overflow: hidden; /* Ensure rounded corners clip content */
+}
+
+.MMM-DailyAgenda .event-color-bar {
+    flex-shrink: 0; /* Prevent bar from shrinking */
+    width: 8px; /* Width of the color bar */
+    /* Background color is set dynamically in JS */
+}
+
+.MMM-DailyAgenda .event-details {
+    padding: 8px 12px;
+    flex-grow: 1; /* Allow details to take remaining space */
+}
+
+.MMM-DailyAgenda .event-title {
+    font-size: 0.95em;
+    margin-bottom: 3px;
+}
+
+.MMM-DailyAgenda .event-time {
+    font-size: 0.85em;
+}
+
+.MMM-DailyAgenda .no-events {
+     padding: 10px 0;
+}
+
+/* Style for errors */
+.MMM-DailyAgenda .alert {
+    color: #ff8b8b; /* Reddish color for errors */
+}
+
+.MMM-DailyAgenda .event-item.event-over {
+  opacity: 0.6; /* Make the whole item semi-transparent */
+}
+
+.MMM-DailyAgenda .event-item.event-over .event-title,
+.MMM-DailyAgenda .event-item.event-over .event-time {
+   text-decoration: line-through; /* Add strikethrough to text */
+   /* color: #aaa; */ /* Optionally make text dimmer too */
+}
